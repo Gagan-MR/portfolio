@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gagan M R — UI/UX &amp; Product Designer</title>
+  <link rel="shortcut icon" href="assets/icons/logo.png" type="image/png" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Sticky Navigation with Theme Switcher & Top "Hire Me" WhatsApp CTA -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <img src="assets/icons/logo.png" alt="Gagan M R" data-asset="assets/icons/logo.png" />
+        <span>Gagan M R</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#work">Selected Work</a></li>
+        <li><a href="#spotlight">Deep Dive</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About &amp; Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Dark / Light Theme Switcher -->
+        <button class="theme-btn" id="themeToggle" aria-label="Switch Dark or Light Theme" title="Switch Theme">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+
+        <!-- Top "Hire Me" Button Redirecting Directly to WhatsApp -->
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Gagan,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20hire%20you%20for%20a%20UI/UX%20project."
+           target="_blank"
+           rel="noopener"
+           class="hire-me-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Hire Me</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero container">
+      <div class="hero-layout">
+        <div>
+          <div class="availability-tag">
+            <span class="pulse-dot"></span> Available for UI/UX &amp; Product Design
+          </div>
+          <h1>Designing <span class="gradient-text">digital products</span> &amp; scalable interfaces.</h1>
+          <p class="hero-summary">
+            I’m <strong>Gagan M R</strong> — a UI/UX &amp; Product Designer specializing in end-to-end web applications, modular Figma design systems, interactive prototyping, and brand identity architecture.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">Explore Case Studies <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#about" class="btn btn-outline">Experience &amp; Stack</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="assets/images/hero/hero-cover.png" alt="Gagan M R UI/UX Showcase" data-asset="assets/images/hero/hero-cover.png" />
+        </div>
+      </div>
+
+      <!-- Quick Value Metrics -->
+      <div class="metrics-strip">
+        <div class="metric-item">
+          <h3>End-to-End</h3>
+          <p>Wireframes to Dev Handoff</p>
+        </div>
+        <div class="metric-item">
+          <h3>100%</h3>
+          <p>Component &amp; Edge-Case Coverage</p>
+        </div>
+        <div class="metric-item">
+          <h3>Figma</h3>
+          <p>Auto-Layout &amp; Token Systems</p>
+        </div>
+        <div class="metric-item">
+          <h3>UI QA</h3>
+          <p>Pixel-Accurate Implementation Audits</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Selected Works (Filterable + Interactive Case Study Modal) -->
+    <section class="section container" id="work">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">Portfolio</span>
+          <h2 class="section-heading">Selected Works</h2>
+          <p class="section-subcopy">Product architecture, scalable Figma systems, and end-to-end user experience case studies.</p>
+        </div>
+
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-pill active" data-filter="all">All Projects</button>
+          <button class="filter-pill" data-filter="uiux">UI/UX &amp; Systems</button>
+          <button class="filter-pill" data-filter="product">Product Flows</button>
+          <button class="filter-pill" data-filter="branding">Brand &amp; Visual</button>
+        </div>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </section>
+
+    <!-- 3. Featured Architecture Deep-Dive -->
+    <section class="section container" id="spotlight">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">Featured Breakdown</span>
+          <h2 class="section-heading">Inside My Product Design Architecture</h2>
+          <p class="section-subcopy">How I structure complex web applications from raw user requirements to engineering-ready specs.</p>
+        </div>
+      </div>
+
+      <div class="spotlight-card">
+        <div class="spotlight-header">
+          <div>
+            <span class="eyebrow">Systems Thinking</span>
+            <h3 class="spotlight-title">Cloud Document Editor &amp; Multi-State Dashboard Ecosystem</h3>
+          </div>
+          <a href="#contact" class="btn btn-outline">Request Full Walkthrough <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="spotlight-grid">
+          <div class="spotlight-pillar">
+            <h4><i class="fa-solid fa-sitemap"></i> 01. Information Architecture</h4>
+            <p>
+              Designed clear separation between the project dashboard, file explorer trees, live preview split-panes, and version history drawers so users never lose context during heavy editing workflows.
+            </p>
+          </div>
+
+          <div class="spotlight-pillar">
+            <h4><i class="fa-solid fa-cubes"></i> 02. Component &amp; Token Logic</h4>
+            <p>
+              Engineered reusable Figma component variants using strict auto-layout rules, semantic color tokens, and responsive breakpoints covering default, hover, active, loading, and error states.
+            </p>
+          </div>
+
+          <div class="spotlight-pillar">
+            <h4><i class="fa-solid fa-shield-halved"></i> 03. Security &amp; UI QA Validation</h4>
+            <p>
+              Mapped critical authentication gateways—including 2FA setup, OTP verification, and session recovery—followed by hands-on manual QA passes to ensure zero visual regressions in production.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. UX Design Process -->
+    <section class="section container" id="process">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">Methodology</span>
+          <h2 class="section-heading">How I Design Products</h2>
+        </div>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-num">01</span>
+          <h3>Discovery &amp; User Flows</h3>
+          <p>Mapping user journeys, edge cases, and information architecture before drawing a single pixel.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">02</span>
+          <h3>Wireframing &amp; Structure</h3>
+          <p>Low- and high-fidelity layouts focused on hierarchy, scannability, and frictionless task completion.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">03</span>
+          <h3>Figma Design Systems</h3>
+          <p>Building tokenized variables, responsive auto-layout components, and exhaustive interactive states.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">04</span>
+          <h3>Prototyping &amp; UI QA</h3>
+          <p>Interactive validation, developer handoff specs, and hands-on UI QA passes across desktop and mobile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Capabilities -->
+    <section class="section container" id="capabilities">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">Capabilities</span>
+          <h2 class="section-heading">What I Do</h2>
+        </div>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3>UI/UX &amp; Product Design</h3>
+          <p>End-to-end wireframing, user journey mapping, and interactive Figma prototypes engineered for clarity and usability.</p>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Design Systems</h3>
+          <p>Tokenized color palettes, typography scales, auto-layout components, and multi-state documentation for growing teams.</p>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Brand &amp; Visual Direction</h3>
+          <p>Visual identity systems, custom graphic patterns, and cohesive brand guidelines across web and product touchpoints.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Detailed About, Stack & Experience Timeline -->
+    <section class="section container" id="about">
+      <div class="about-split">
+        <div class="about-copy">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-heading" style="margin-bottom: 1.5rem;">Systems thinking meets interface craft.</h2>
+          <p>
+            I’m <strong>Gagan M R</strong>, an independent UI/UX &amp; Product Designer based in Karnataka, India. I specialize in end-to-end product design, high- and low-fidelity wireframing, interactive prototyping, and scalable design systems.
+          </p>
+          <p>
+            My approach combines structured auto-layout engineering in Figma with rigorous edge-case documentation—ensuring every screen translates cleanly from design handoff to live production.
+          </p>
+
+          <div class="stack-grid">
+            <div class="stack-item"><i class="fa-brands fa-figma"></i> Figma &amp; Auto Layout</div>
+            <div class="stack-item"><i class="fa-solid fa-cubes"></i> Design Systems</div>
+            <div class="stack-item"><i class="fa-solid fa-sitemap"></i> Wireframing &amp; Flows</div>
+            <div class="stack-item"><i class="fa-solid fa-bezier-curve"></i> Interactive Prototyping</div>
+            <div class="stack-item"><i class="fa-solid fa-compass-drafting"></i> Brand &amp; Packaging</div>
+            <div class="stack-item"><i class="fa-solid fa-check-double"></i> UI QA &amp; Dev Handoff</div>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow" style="margin-bottom: 1.25rem;">Experience &amp; Focus</span>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">PRODUCT DESIGN &amp; SYSTEMS</div>
+              <h4>Lead UI/UX Product Designer</h4>
+              <p>Architected complete web application ecosystems, cloud document editors, dashboard workflows, 2FA/OTP security gateways, and component libraries in Figma.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">BRANDING &amp; VISUAL SYSTEMS</div>
+              <h4>Visual &amp; Brand Identity Designer</h4>
+              <p>Created cohesive brand identities, bespoke abstract line patterns, retail packaging systems, and visual guidelines for hospitality and consumer brands.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">QUALITY ASSURANCE &amp; HANDOFF</div>
+              <h4>UI Architecture &amp; QA Collaboration</h4>
+              <p>Partnered directly with frontend and QA engineering teams to validate interactive states, responsive breakpoints, and edge-case behavior across releases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Split Contact Section -->
+    <section class="section container" id="contact">
+      <div class="contact-panel">
+        <div class="contact-left">
+          <span class="contact-badge">LET'S WORK TOGETHER</span>
+          <h2>Have a project in mind?</h2>
+          <p>
+            I'm always open to discussing new projects, design systems, and creative opportunities. Let's create something amazing together!
+          </p>
+          <a href="mailto:gaganmr.ckm@gmail.com" class="btn-glow">
+            Get In Touch <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85rem;"></i>
+          </a>
+        </div>
+
+        <div class="contact-right">
+          <a href="mailto:gaganmr.ckm@gmail.com" class="contact-row">
+            <span class="contact-row-label">
+              <i class="fa-solid fa-envelope" style="color: #a78bfa;"></i> Email
+            </span>
+            <span class="contact-row-value">gaganmr.ckm@gmail.com</span>
+          </a>
+
+          <!-- Update 919113870006 with your 10-digit WhatsApp number -->
+          <a href="https://wa.me/919113870006?text=Hi%20Gagan,%20I'd%20like%20to%20discuss%20a%20UI/UX%20project." target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-row-label">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.05rem;"></i> WhatsApp
+            </span>
+            <span class="contact-row-value">+91 91138 70006</span>
+          </a>
+
+          <div class="contact-row">
+            <span class="contact-row-label">
+              <i class="fa-solid fa-location-dot" style="color: #f43f5e;"></i> Location
+            </span>
+            <span class="contact-row-value">India (IST • Remote Worldwide)</span>
+          </div>
+
+          <div class="contact-pills">
+            <a href="https://linkedin.com/in/gaganmr" target="_blank" rel="noopener" class="social-pill">
+              <i class="fa-brands fa-linkedin" style="color: #38bdf8;"></i> LinkedIn
+            </a>
+            <a href="https://instagram.com/digital.inky" target="_blank" rel="noopener" class="social-pill">
+              <i class="fa-brands fa-instagram" style="color: #f472b6;"></i> Instagram
+            </a>
+            <a href="https://wa.me/919113870006" target="_blank" rel="noopener" class="social-pill">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dynamic Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="copyright-text">
+        &copy; <span id="currentYear"></span> Gagan M R. All rights reserved.
+      </p>
+      <div class="socials">
+        <a href="https://linkedin.com/in/gaganmr" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/Gagan-MR" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://instagram.com/digital.inky" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/9113870006" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Case Study Modal -->
+  <div class="modal" id="previewModal" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+      <img class="modal-img" id="modalImg" src="" alt="Project Preview" />
+      <div class="modal-content">
+        <div class="modal-meta-bar">
+          <span class="eyebrow" id="modalCategory" style="margin-bottom: 0;">Category</span>
+          <span class="modal-role" id="modalRole">Role • Platform</span>
+        </div>
+        <h3 id="modalTitle">Project Title</h3>
+        <p id="modalSummary" class="modal-lead">Project summary</p>
+
+        <div class="case-study-grid">
+          <div class="cs-block">
+            <h4><i class="fa-solid fa-bullseye"></i> The Challenge</h4>
+            <p id="modalChallenge"></p>
+          </div>
+          <div class="cs-block">
+            <h4><i class="fa-solid fa-compass-drafting"></i> UX Architecture &amp; Solution</h4>
+            <p id="modalSolution"></p>
+          </div>
+          <div class="cs-block">
+            <h4><i class="fa-solid fa-layer-group"></i> Key Deliverables</h4>
+            <ul id="modalDeliverables" class="cs-list"></ul>
+          </div>
+          <div class="cs-block">
+            <h4><i class="fa-solid fa-chart-line"></i> Outcome &amp; Impact</h4>
+            <p id="modalOutcome"></p>
+          </div>
+        </div>
+
+        <div id="modalActionWrap" style="margin-top: 1.75rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modular Scripts -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

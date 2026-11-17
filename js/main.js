@@ -1,0 +1,154 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Dynamic Copyright Year
+  const yearEl = document.getElementById("currentYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // 2. Dark / Light Theme Switcher (Persists in localStorage)
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("portfolio-theme", theme);
+    themeIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  }
+
+  const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
+
+  // 3. Local Asset Drop-Zone Placeholder Handler
+  function attachLocalFallback(imgEl) {
+    imgEl.addEventListener("error", () => {
+      const expectedPath = imgEl.dataset.asset || imgEl.getAttribute("src");
+      const isLogo = imgEl.closest(".brand");
+      const placeholder = document.createElement("div");
+      placeholder.className = "asset-placeholder";
+      placeholder.innerHTML = isLogo
+        ? `<i class="fa-solid fa-layer-group"></i>`
+        : `<i class="fa-regular fa-image"></i><span>Add image at:<br><strong>${expectedPath}</strong></span>`;
+      imgEl.replaceWith(placeholder);
+    }, { once: true });
+  }
+
+  document.querySelectorAll("img[data-asset]").forEach(attachLocalFallback);
+
+  // 4. Mobile Navigation Toggle
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navMenu = document.getElementById("navMenu");
+  mobileToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
+  document.querySelectorAll(".nav-menu a").forEach((link) => {
+    link.addEventListener("click", () => navMenu.classList.remove("active"));
+  });
+
+  // 5. Render Rich UI/UX Project Cards
+  const portfolioGrid = document.getElementById("portfolioGrid");
+
+  function renderProjects(filter = "all") {
+    const filtered = filter === "all"
+      ? PROJECTS_DATA
+      : PROJECTS_DATA.filter((item) => item.category === filter);
+
+    portfolioGrid.innerHTML = filtered
+      .map(
+        (project) => `
+        <article class="project-card" data-id="${project.id}">
+          <div class="project-thumb">
+            <span class="project-badge">${project.badge}</span>
+            ${project.metricBadge ? `<span class="project-metric-pill">${project.metricBadge}</span>` : ""}
+            <img src="${project.image}" data-asset="${project.image}" alt="${project.title}" />
+          </div>
+          <div class="project-body">
+            <div class="project-role-line">${project.role}</div>
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-desc">${project.summary}</p>
+            <div class="project-deliverables-chips">
+              ${project.highlights.map((tag) => `<span class="deliverable-chip">${tag}</span>`).join("")}
+            </div>
+            <div class="project-footer">
+              <span class="project-tags">${project.tags}</span>
+              <button class="project-link open-modal" data-id="${project.id}">
+                Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      `
+      )
+      .join("");
+
+    portfolioGrid.querySelectorAll("img[data-asset]").forEach(attachLocalFallback);
+  }
+
+  renderProjects();
+
+  // 6. Category Filter Handling
+  const filterPills = document.querySelectorAll(".filter-pill");
+  filterPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      filterPills.forEach((p) => p.classList.remove("active"));
+      pill.classList.add("active");
+      renderProjects(pill.dataset.filter);
+    });
+  });
+
+  // 7. Structured Case Study Modal
+  const modal = document.getElementById("previewModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalCategory = document.getElementById("modalCategory");
+  const modalRole = document.getElementById("modalRole");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalSummary = document.getElementById("modalSummary");
+  const modalChallenge = document.getElementById("modalChallenge");
+  const modalSolution = document.getElementById("modalSolution");
+  const modalDeliverables = document.getElementById("modalDeliverables");
+  const modalOutcome = document.getElementById("modalOutcome");
+  const modalActionWrap = document.getElementById("modalActionWrap");
+  const closeModal = document.getElementById("closeModal");
+
+  portfolioGrid.addEventListener("click", (e) => {
+    const card = e.target.closest(".project-card");
+    if (!card) return;
+
+    const project = PROJECTS_DATA.find((p) => p.id === card.dataset.id);
+    if (!project) return;
+
+    const thumbImg = card.querySelector("img");
+    if (thumbImg) {
+      modalImg.style.display = "block";
+      modalImg.src = thumbImg.src;
+    } else {
+      modalImg.style.display = "none";
+    }
+
+    modalCategory.textContent = project.badge;
+    modalRole.textContent = project.role;
+    modalTitle.textContent = project.title;
+    modalSummary.textContent = project.summary;
+    modalChallenge.textContent = project.challenge;
+    modalSolution.textContent = project.solution;
+    modalDeliverables.innerHTML = project.deliverables.map((d) => `<li>${d}</li>`).join("");
+    modalOutcome.textContent = project.outcome;
+
+    modalActionWrap.innerHTML = project.figmaUrl
+      ? `<a href="${project.figmaUrl}" target="_blank" rel="noopener" class="btn btn-primary">
+           <i class="fa-brands fa-figma"></i> Open Interactive Figma Prototype
+         </a>`
+      : "";
+
+    modal.classList.add("open");
+  });
+
+  closeModal.addEventListener("click", () => modal.classList.remove("open"));
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("open");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modal.classList.remove("open");
+  });
+});
