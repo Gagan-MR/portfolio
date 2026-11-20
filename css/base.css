@@ -31,27 +31,25 @@ img {
   height: auto;
 }
 
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 .ui-icon {
   width: 18px;
   height: 18px;
-  flex-shrink: 0;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .ui-icon-sm {
   width: 15px;
   height: 15px;
-  flex-shrink: 0;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .ui-icon-lg {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-block;
+  width: 22px;
+  height: 22px;
 }
 
 .accent-svg {
@@ -93,7 +91,7 @@ img {
 
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.7rem, 3.5vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -101,7 +99,7 @@ img {
 
 .section-subcopy {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.98rem;
   margin-top: 0.5rem;
   max-width: 38rem;
 }

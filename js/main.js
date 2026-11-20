@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const placeholder = document.createElement("div");
       placeholder.className = "asset-placeholder";
       placeholder.innerHTML = isLogo
-        ? `<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>`
-        : `<svg class="ui-icon-lg accent-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add image at:<br><strong>${expectedPath}</strong></span>`;
+        ? `<svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>`
+        : `<svg class="ui-icon-lg accent-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add image at:<br><strong>${expectedPath}</strong></span>`;
       imgEl.replaceWith(placeholder);
     }, { once: true });
   }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="project-tags">${project.tags}</span>
               <button class="project-link open-modal" data-id="${project.id}">
                 Case Study
-                <svg class="ui-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                <svg class="ui-icon-sm" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
               </button>
             </div>
           </div>

@@ -1,13 +1,13 @@
 /* Metrics Strip */
 .metric-item h3 {
   font-family: var(--font-display);
-  font-size: 1.9rem;
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 800;
   line-height: 1.1;
 }
 
 .metric-item p {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
   margin-top: 0.3rem;
 }
@@ -30,6 +30,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .filter-pill:hover,
@@ -80,15 +81,15 @@
 
 .project-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 12px;
+  left: 12px;
   z-index: 2;
-  padding: 0.32rem 0.8rem;
+  padding: 0.3rem 0.75rem;
   background: rgba(7, 8, 10, 0.82);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50px;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #f8fafc;
 }
@@ -98,17 +99,17 @@
   bottom: 12px;
   right: 12px;
   z-index: 2;
-  padding: 0.28rem 0.72rem;
+  padding: 0.25rem 0.68rem;
   background: var(--accent-primary);
   color: #fff;
   border-radius: 6px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
 .project-body {
-  padding: 1.65rem;
+  padding: 1.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -116,21 +117,21 @@
 
 .project-role-line {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--accent-secondary);
   margin-bottom: 0.45rem;
 }
 
 .project-title {
   font-family: var(--font-display);
-  font-size: 1.32rem;
+  font-size: 1.28rem;
   font-weight: 700;
   margin-bottom: 0.55rem;
 }
 
 .project-desc {
   color: var(--text-secondary);
-  font-size: 0.92rem;
+  font-size: 0.91rem;
   margin-bottom: 1.15rem;
   flex: 1;
 }
@@ -143,8 +144,8 @@
 }
 
 .deliverable-chip {
-  font-size: 0.73rem;
-  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  padding: 0.24rem 0.6rem;
   border-radius: 6px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
@@ -155,19 +156,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border-subtle);
 }
 
 .project-tags {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   font-weight: 500;
 }
 
 .project-link {
   min-height: 40px;
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-primary);
   display: inline-flex;
@@ -176,6 +178,7 @@
   cursor: pointer;
   background: none;
   border: none;
+  white-space: nowrap;
 }
 
 .project-link:hover {
@@ -187,7 +190,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 3rem;
+  padding: 2.75rem;
   box-shadow: var(--shadow-card);
 }
 
@@ -204,19 +207,19 @@
 
 .spotlight-title {
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
 }
 
 .spotlight-pillar {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.6rem;
+  padding: 1.5rem;
 }
 
 .spotlight-pillar h4 {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: 1.06rem;
   margin-bottom: 0.65rem;
   display: flex;
   align-items: center;
@@ -234,7 +237,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 2rem 1.75rem;
+  padding: 1.85rem 1.65rem;
   transition: var(--transition);
   box-shadow: var(--shadow-card);
 }
@@ -248,7 +251,7 @@
 .step-num {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--accent-primary);
   background: rgba(99, 102, 241, 0.12);
@@ -260,44 +263,44 @@
 .process-step h3,
 .bento-card h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.18rem;
   margin-bottom: 0.65rem;
 }
 
 .process-step p,
 .bento-card p {
   color: var(--text-secondary);
-  font-size: 0.92rem;
+  font-size: 0.91rem;
 }
 
 .bento-icon {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 12px;
   background: rgba(99, 102, 241, 0.12);
   color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.35rem;
 }
 
 .about-copy p {
   color: var(--text-secondary);
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   margin-bottom: 1.25rem;
 }
 
 .stack-item {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  padding: 1rem 1.15rem;
+  padding: 0.95rem 1.1rem;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: 0.87rem;
 }
 
 .timeline {
@@ -305,7 +308,7 @@
   flex-direction: column;
   gap: 1.25rem;
   border-left: 2px solid var(--border-subtle);
-  padding-left: 1.5rem;
+  padding-left: 1.35rem;
 }
 
 .timeline-item {
@@ -313,13 +316,13 @@
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 1.4rem 1.6rem;
+  padding: 1.35rem 1.5rem;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -1.92rem;
+  left: -1.78rem;
   top: 1.65rem;
   width: 11px;
   height: 11px;
@@ -330,14 +333,14 @@
 
 .timeline-date {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--accent-secondary);
   margin-bottom: 0.3rem;
 }
 
 .timeline-item h4 {
   font-family: var(--font-display);
-  font-size: 1.12rem;
+  font-size: 1.1rem;
   margin-bottom: 0.4rem;
 }
 
@@ -351,10 +354,10 @@
   background: var(--contact-gradient);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 3.75rem 4rem;
+  padding: 3.5rem 3.75rem;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 3.5rem;
+  gap: 3rem;
   align-items: center;
   box-shadow: var(--shadow-card);
 }
@@ -370,12 +373,12 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.35rem;
 }
 
 .contact-left h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.6vw, 2.85rem);
+  font-size: clamp(1.85rem, 3.6vw, 2.85rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1rem;
@@ -383,14 +386,15 @@
 
 .contact-left p {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.98rem;
   max-width: 28rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.85rem;
 }
 
 .btn-glow {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   min-height: 48px;
   padding: 0.9rem 1.75rem;
@@ -411,7 +415,7 @@
 .contact-right {
   display: flex;
   flex-direction: column;
-  gap: 0.95rem;
+  gap: 0.9rem;
 }
 
 .contact-row {
@@ -420,12 +424,12 @@
   align-items: center;
   gap: 1rem;
   min-height: 52px;
-  padding: 1rem 1.35rem;
+  padding: 0.95rem 1.25rem;
   background: var(--row-bg);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   font-family: var(--font-mono);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   transition: var(--transition);
 }
 
@@ -444,13 +448,13 @@ a.contact-row:hover {
 .contact-row-value {
   color: var(--text-primary);
   text-align: right;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .contact-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.75rem;
   margin-top: 0.25rem;
 }
 
@@ -459,11 +463,11 @@ a.contact-row:hover {
   align-items: center;
   gap: 8px;
   min-height: 44px;
-  padding: 0.65rem 1.15rem;
+  padding: 0.65rem 1.1rem;
   background: var(--row-bg);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 600;
   transition: var(--transition);
 }
@@ -476,8 +480,8 @@ a.contact-row:hover {
 /* Footer */
 .footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 2.75rem 0;
-  margin-top: 4rem;
+  padding: 2.5rem 0;
+  margin-top: 3.5rem;
 }
 
 .footer-inner {
@@ -485,22 +489,22 @@ a.contact-row:hover {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .copyright-text {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .socials {
   display: flex;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .socials a {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -520,7 +524,7 @@ a.contact-row:hover {
 .asset-placeholder {
   width: 100%;
   height: 100%;
-  min-height: 210px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -539,13 +543,13 @@ a.contact-row:hover {
   border-radius: 12px;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
 }
 
 .brand .asset-placeholder {
-  width: 40px;
-  height: 40px;
-  min-height: 40px;
+  width: 38px;
+  height: 38px;
+  min-height: 38px;
   padding: 0;
   border-radius: 50%;
   font-size: 0.7rem;
@@ -559,7 +563,7 @@ a.contact-row:hover {
   background: rgba(5, 6, 8, 0.88);
   backdrop-filter: blur(12px);
   z-index: 1000;
-  padding: 1.5rem;
+  padding: 1rem;
   overflow-y: auto;
   align-items: flex-start;
   justify-content: center;
@@ -588,14 +592,14 @@ a.contact-row:hover {
 
 .modal-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.78);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   font-size: 1.25rem;
   cursor: pointer;
   z-index: 10;
@@ -604,14 +608,14 @@ a.contact-row:hover {
 .modal-img,
 .modal-video {
   width: 100%;
-  max-height: 26rem;
+  max-height: 25rem;
   object-fit: cover;
   border-bottom: 1px solid var(--border-subtle);
   background: #000;
 }
 
 .modal-content {
-  padding: 2.25rem;
+  padding: 2rem;
 }
 
 .modal-meta-bar {
@@ -619,47 +623,47 @@ a.contact-row:hover {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.5rem;
   margin-bottom: 0.65rem;
 }
 
 .modal-role {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
 }
 
 .modal-content h3 {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
   margin-bottom: 0.6rem;
 }
 
 .modal-lead {
   color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 1.75rem;
+  font-size: 0.96rem;
+  margin-bottom: 1.5rem;
 }
 
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .cs-block {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  padding: 1.25rem;
+  padding: 1.15rem;
 }
 
 .cs-block h4 {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--accent-secondary);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -667,7 +671,7 @@ a.contact-row:hover {
 
 .cs-block p {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .cs-list {
@@ -679,7 +683,7 @@ a.contact-row:hover {
 
 .cs-list li {
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   padding-left: 1rem;
   position: relative;
 }
@@ -694,24 +698,57 @@ a.contact-row:hover {
 @media (max-width: 60rem) {
   .contact-panel {
     grid-template-columns: 1fr;
-    padding: 2.75rem 2.25rem;
+    padding: 2.5rem 2rem;
   }
 }
 
 @media (max-width: 48rem) {
+  .filter-bar {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
   .case-study-grid {
     grid-template-columns: 1fr;
   }
   .contact-panel,
   .spotlight-card {
-    padding: 1.75rem 1.4rem;
+    padding: 1.5rem 1.25rem;
+  }
+  .spotlight-header .btn {
+    width: 100%;
+  }
+  .contact-left .btn-glow {
+    width: 100%;
   }
   .contact-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.35rem;
+    padding: 0.9rem 1rem;
   }
   .contact-row-value {
     text-align: left;
+    font-size: 0.82rem;
+  }
+  .contact-pills {
+    flex-direction: column;
+  }
+  .social-pill {
+    width: 100%;
+    justify-content: center;
+  }
+  .modal-content {
+    padding: 1.35rem;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
   }
 }

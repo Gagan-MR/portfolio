@@ -1,25 +1,21 @@
 # Release Changelog — Gagan M R Portfolio
 
 **Release Date:** November 20, 2026  
-**Version:** v1.3  
+**Version:** v1.5  
 
 ---
 
 ## Summary of Changes
 
-Release **v1.3** restores the clean original portfolio copy (removing all `7+ Years` text references), retains the 6-card multidisciplinary portfolio grid and self-contained inline SVG icons, and ensures all external links and WhatsApp CTAs open cleanly without file-access errors.
+Release **v1.5** updates the UI/UX positioning across the portfolio to highlight multi-platform product design (**Web, Desktop, Tablet & Mobile**) and **Interactive Figma Prototyping** across all device viewports.
 
 ---
 
 ## Detailed Breakdown
 
-### 1. Restored Original Portfolio Copy (`index.html`, `README.md`)
-- **Navigation & Hero:** Reverted `About (7+ Yrs)` back to `About`, restored the availability pill to `Available for UI/UX & Product Design`, and restored the original 4-column metrics strip (`End-to-End`, `100%`, `Figma`, `UI QA`).
-- **About & Contact Copy:** Removed all `7+ Years` mentions from the About section, timeline, and Contact panel while preserving your multidisciplinary capabilities (UI/UX, Brand & Logos, Custom Icons, Posters/Print, and Motion/Video).
-
-### 2. Fixed Link & Hire Me Button Behavior (`index.html`)
-- **Proper External Link Handling:** Ensured the top **Hire Me** WhatsApp button (`https://wa.me/919113870006`), email links (`mailto:gaganmr.ckm@gmail.com`), and social links use clean URL encoding and `rel="noopener noreferrer"` so browsers never attempt to resolve them as local file paths.
-
-### 3. Self-Contained Inline SVG Icons & 6-Card Grid (`index.html`, `css/base.css`, `js/projects-data.js`)
-- **Zero CDN Icon Failures:** Kept all UI icons as crisp inline SVGs so they render reliably offline and on GitHub Pages.
-- **6-Card Grid:** Maintained the symmetrical 2x3 portfolio showcase across 5 filter pills (`All Projects`, `UI/UX & Systems`, `Brand & Logos`, `Icons & Graphics`, `Motion & Video`).
+### 1. Multi-Platform UI/UX & Interactive Figma Prototyping (`index.html`, `js/projects-data.js`)
+- **Hero & Metrics Strip:** Updated Hero summary and metrics strip to emphasize responsive interfaces across **Web, Desktop, Tablet & Mobile** along with clickable, multi-device **Figma Prototypes**.
+- **Capabilities & About Section:** Highlighted adaptive breakpoint engineering, Smart Animate transitions, gesture flows, and component-driven prototyping across all screen sizes.
+- **Updated UI/UX Case Studies (`js/projects-data.js`):**
+  1. *Multi-Platform Cloud IDE & Dashboard UI* (`Web • Desktop • Tablet • Mobile`)
+  2. *Cross-Platform Mobile, Tablet & Auth Flows* (`iOS • Android • Tablet • Web`)
