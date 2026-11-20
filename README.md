@@ -1,6 +1,6 @@
 # Gagan M R — UI/UX & Product Designer Portfolio
 
-**Version:** v1.8
+**Version:** v1.3
 
 A fast-loading, responsive, mobile-first portfolio showcasing multi-platform UI/UX design across **Web, Desktop, Tablet & Mobile**, interactive Figma prototyping, scalable design systems, brand identities, custom iconography, print/posters, and clean motion/video editing.
 
