@@ -1,0 +1,45 @@
+================================================================================
+RELEASE NOTES — GAGAN M R UI/UX PORTFOLIO (v1.4.0)
+Release Date: November 20, 2026
+================================================================================
+
+OVERVIEW
+--------
+This release finalizes the modular single-page portfolio structure by removing
+the Clients section, generalizing product case study descriptions around cloud
+code editors and IDEs, and wiring direct WhatsApp contact links (+91 91138 70006)
+into the header, contact panel, and footer.
+
+DETAILED CHANGES
+----------------
+1. REMOVAL OF CLIENTS SECTION
+   - Files Affected: index.html, css/layout.css, css/components.css
+   - Details: Removed the #clients section, removed the "Clients" link from the
+     sticky navigation bar, and purged unused .client-* CSS classes so the page
+     transitions directly from the Hero metrics strip into Selected Works.
+   - Timeline Adjustment: Generalized the third milestone card in the About &
+     Experience timeline to highlight UI Architecture & Dev Handoff collaboration.
+
+2. GENERALIZED IDE & CODE EDITOR TERMINOLOGY
+   - Files Affected: index.html, js/projects-data.js
+   - Details: Updated project titles, metric badges, and deep-dive architecture
+     headings to use standard developer-tool language ("Cloud Code Editor &
+     Dashboard UI", "Web IDE", "Multi-State IDE Ecosystem") instead of niche
+     document formatting terms.
+
+3. WHATSAPP DIRECT CONTACT WIRING
+   - Files Affected: index.html
+   - Details: Configured the top "Hire Me" button, the Contact section row
+     (+91 91138 70006), the "Chat on WhatsApp" pill, and the footer WhatsApp icon
+     to open https://wa.me/919113870006 with a pre-populated greeting message.
+
+4. THEME TOGGLE & DYNAMIC COPYRIGHT FOOTER
+   - Files Affected: index.html, css/tokens.css, js/main.js
+   - Details: Maintained dual Dark/Light CSS token sets with localStorage state
+     memory and dynamic JavaScript year rendering in the footer.
+
+5. RELEASE DOCUMENTATION GENERATION
+   - Files Added: CHANGELOG.md, RELEASE_NOTES.txt
+   - Details: Added structured Markdown and plain-text release logs inside the
+     project root to track version history and file-level modifications.
+================================================================================

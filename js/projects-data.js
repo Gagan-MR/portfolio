@@ -8,20 +8,20 @@ const PROJECTS_DATA = [
     id: "cloud-editor-ui",
     category: "uiux",
     badge: "UI/UX Design",
-    metricBadge: "Design System + Web App",
+    metricBadge: "Design System + Web IDE",
     role: "Lead UI/UX Designer • Web SaaS",
-    title: "Cloud Editor & Dashboard UI",
-    summary: "End-to-end UI/UX redesign of a web-based LaTeX & cloud document editor with modular components and responsive dashboard workflows.",
+    title: "Cloud Code Editor & Dashboard UI",
+    summary: "End-to-end UI/UX redesign of a browser-based code editor, IDE workspace, and cloud storage dashboard with modular components and responsive workflows.",
     tags: "Figma • Design System",
     highlights: ["Auto-Layout System", "File Explorer UX", "Version History"],
-    challenge: "Users needed a distraction-free document editing environment capable of handling nested project files, version snapshots, and compilation feedback without visual clutter.",
-    solution: "Architected a unified dashboard and split-pane editor layout powered by tokenized Figma variables, clear visual hierarchy, and collapsible navigation panels.",
+    challenge: "Developers and writers needed a distraction-free browser IDE capable of handling nested project files, version snapshots, and real-time build feedback without visual clutter.",
+    solution: "Architected a unified dashboard and split-pane code editor layout powered by tokenized Figma variables, clear visual hierarchy, and collapsible navigation panels.",
     deliverables: [
       "Tokenized color, spacing & typography system",
       "Multi-state file explorer & version history flows",
       "Developer-ready component specs & UI QA passes"
     ],
-    outcome: "Delivered a scalable, consistent UI architecture that accelerated frontend implementation and streamlined document navigation.",
+    outcome: "Delivered a scalable, consistent UI architecture that accelerated frontend implementation and streamlined multi-file editing workflows.",
     image: "assets/images/projects/project-1.png",
     figmaUrl: ""
   },
@@ -56,12 +56,12 @@ const PROJECTS_DATA = [
     summary: "Cohesive brand identity, custom abstract line patterns, retail packaging, and shelf presentation systems.",
     tags: "Identity • Visual Systems",
     highlights: ["Custom Patterns", "Packaging Grid", "Brand Guidelines"],
-    challenge: "Creating a memorable visual identity that translates seamlessly from physical retail packaging and shelf displays to digital brand touchpoints.",
+    challenge: "Creating a memorable visual identity that translates seamlessly from physical retail packaging and shelf displays to digital touchpoints.",
     solution: "Developed a modular graphic system built around bespoke line-art patterns, structured typographic labels, and high-contrast packaging templates.",
     deliverables: [
       "Primary logo lockups & brand color architecture",
       "Custom abstract pattern library & packaging dielines",
-      "Retail presentation & visual usage guidelines"
+      "Retail shelf presentation & visual usage guidelines"
     ],
     outcome: "Established a distinctive, cohesive visual presence ready for commercial production and digital rollout.",
     image: "assets/images/projects/project-3.png",

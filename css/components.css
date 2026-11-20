@@ -717,7 +717,7 @@ a.contact-row:hover {
   }
   .contact-panel,
   .spotlight-card {
-    padding: 2rem 1.4rem;
+    padding: 1.75rem 1.4rem;
   }
   .contact-row {
     flex-direction: column;
