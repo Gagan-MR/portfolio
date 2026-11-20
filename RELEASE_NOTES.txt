@@ -1,23 +1,25 @@
 ================================================================================
-RELEASE NOTES — GAGAN M R UI/UX & VISUAL DESIGN PORTFOLIO (v1.8)
+RELEASE NOTES — GAGAN M R UI/UX & VISUAL DESIGN PORTFOLIO (v1.4)
 Release Date: November 20, 2026
 ================================================================================
 
 OVERVIEW
 --------
-Release v1.8 resolves the mobile side drawer blur/overlap bug by separating
-the mobile slide-in drawer from the sticky navbar's backdrop-filter stacking
-context.
+Release v1.4 upgrades the custom cursor suite based on UI/UX figure-ground
+contrast principles: high-contrast neutral fills, crisp 1.1px borders, and a
+signature theme-accent pivot dot across the geometric arrow, pointing hand, and
+hollow I-beam text cursor.
 
 DETAILED CHANGES
 ----------------
-1. MOBILE SIDE DRAWER STACKING FIX
-   - Files Affected: index.html, css/layout.css
-   - Details: Moved #navMenu (.nav-drawer, z-index: 200) out of .navbar
-     (z-index: 100) so it renders sharply above #navOverlay (z-index: 190) with
-     full contrast and clickable links on mobile devices.
+1. HIGH-CONTRAST GEOMETRIC CURSOR SUITE
+   - Files Affected: index.html, css/components.css
+   - Details: Replaced solid accent-filled cursors with high-contrast neutral
+     fills (#f8fafc in Dark Mode, #0f172a in Light Mode) + crisp opposing
+     borders and an accent-colored pivot dot so the cursor never blends into
+     colored CTA buttons.
 
-2. REPOSITORY DOCUMENTATION (v1.8)
+2. REPOSITORY DOCUMENTATION (v1.4)
    - Files Updated: README.md, CHANGELOG.md, RELEASE_NOTES.txt
-   - Details: Synchronized all documentation files to version v1.8.
+   - Details: Synchronized all documentation files at version v1.4.
 ================================================================================

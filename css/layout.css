@@ -306,17 +306,18 @@
   border-radius: calc(var(--radius-lg) - 6px);
 }
 
+/* Equally Spaced Metrics Strip */
 .metrics-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
   margin-top: 3.5rem;
-  padding: 1.75rem 2rem;
+  padding: 1.85rem 2.5rem;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  align-items: start;
 }
 
 /* Sections & Grids */
@@ -372,9 +373,13 @@
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .process-grid,
-  .metrics-strip {
+  .process-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
   .spotlight-grid {
     grid-template-columns: 1fr;
@@ -423,9 +428,10 @@
     grid-template-columns: 1fr;
   }
   .metrics-strip {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 1.25rem;
-    gap: 1.1rem;
+    padding: 1.35rem;
+    gap: 1.25rem;
     margin-top: 2.5rem;
   }
   .hire-me-btn {

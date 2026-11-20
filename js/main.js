@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("currentYear");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // 2. Dark / Light Theme Switcher (Persists in localStorage)
+  // 2. Dark / Light Theme Switcher (Dark Theme Default)
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
   const themeIconSun = document.getElementById("themeIconSun");
@@ -26,7 +26,46 @@ document.addEventListener("DOMContentLoaded", () => {
     applyTheme(nextTheme);
   });
 
-  // 3. Local Asset Drop-Zone Placeholder Handler
+  // 3. Ergonomic High-Contrast Geometric Cursor Suite (Arrow, Hand & Hollow I-Beam)
+  const figmaCursor = document.getElementById("figmaCursor");
+  const clickableSelector = "a, button, .project-thumb, .filter-pill, .social-pill";
+  const textSelector = "p, h1, h2, h3, h4, li, .project-role-line, .project-tags, .modal-role, .timeline-date, .contact-row-value, .copyright-text";
+
+  if (figmaCursor && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    window.addEventListener("mousemove", (e) => {
+      figmaCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+      if (!figmaCursor.classList.contains("visible")) {
+        figmaCursor.classList.add("visible");
+      }
+
+      const target = e.target;
+      if (target && target.closest) {
+        if (target.closest(clickableSelector)) {
+          document.body.classList.add("cursor-hover");
+          document.body.classList.remove("cursor-text-mode");
+        } else if (target.closest(textSelector)) {
+          document.body.classList.remove("cursor-hover");
+          document.body.classList.add("cursor-text-mode");
+        } else {
+          document.body.classList.remove("cursor-hover", "cursor-text-mode");
+        }
+      }
+    }, { passive: true });
+
+    document.addEventListener("mouseleave", () => {
+      figmaCursor.classList.remove("visible");
+    });
+
+    document.addEventListener("mousedown", () => {
+      document.body.classList.add("cursor-pressed");
+    });
+
+    document.addEventListener("mouseup", () => {
+      document.body.classList.remove("cursor-pressed");
+    });
+  }
+
+  // 4. Local Asset Drop-Zone Placeholder Handler
   function attachLocalFallback(imgEl) {
     imgEl.addEventListener("error", () => {
       const expectedPath = imgEl.dataset.asset || imgEl.getAttribute("src");
@@ -42,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("img[data-asset]").forEach(attachLocalFallback);
 
-  // 4. Mobile Slide-In Side Drawer Navigation
+  // 5. Mobile Slide-In Side Drawer Navigation
   const mobileToggle = document.getElementById("mobileToggle");
   const navMenu = document.getElementById("navMenu");
   const navOverlay = document.getElementById("navOverlay");
@@ -68,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", closeMobileDrawer);
   });
 
-  // 5. Floating Back-to-Top Button
+  // 6. Floating Back-to-Top Button
   const backToTopBtn = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
@@ -82,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // 6. Render 6-Card Portfolio Grid
+  // 7. Render 6-Card Portfolio Grid
   const portfolioGrid = document.getElementById("portfolioGrid");
 
   function renderProjects(filter = "all") {
@@ -124,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderProjects();
 
-  // 7. Category Filter Handling
+  // 8. Category Filter Handling
   const filterPills = document.querySelectorAll(".filter-pill");
   filterPills.forEach((pill) => {
     pill.addEventListener("click", () => {
@@ -134,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 8. Structured Case Study & Video Modal
+  // 9. Structured Case Study & Video Modal
   const modal = document.getElementById("previewModal");
   const modalImg = document.getElementById("modalImg");
   const modalVideo = document.getElementById("modalVideo");

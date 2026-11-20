@@ -1,4 +1,9 @@
 /* Metrics Strip */
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
 .metric-item h3 {
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 2.2vw, 1.85rem);
@@ -730,6 +735,126 @@ a.contact-row:hover {
   color: var(--accent-primary);
   position: absolute;
   left: 0;
+}
+
+/* Ergonomic High-Contrast Geometric Cursor Suite (UI/UX Figure-Ground Contrast) */
+@media (hover: hover) and (pointer: fine) {
+  body,
+  a,
+  button,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  span,
+  li,
+  .project-thumb,
+  .filter-pill,
+  .social-pill {
+    cursor: none !important;
+  }
+
+  .figma-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent !important;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .figma-cursor.visible {
+    opacity: 1;
+  }
+
+  .cursor-svg {
+    display: none;
+    background: transparent !important;
+    transition: transform 0.14s ease;
+  }
+
+  /* Default State: Geometric Arrow + Pivot Dot */
+  .cursor-arrow {
+    display: block;
+    margin-left: -5px;
+    margin-top: -3px;
+  }
+
+  .cursor-hand {
+    margin-left: -10px;
+    margin-top: -3px;
+  }
+
+  .cursor-text {
+    margin-left: -11px;
+    margin-top: -11px;
+  }
+
+  /* Dark Mode: Crisp Light Neutral Body + Dark Outline + Sky Accent Pivot Dot */
+  .figma-cursor-fill {
+    fill: #f8fafc;
+    stroke: #07080a;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+  }
+
+  .figma-hand-lines {
+    stroke: #07080a;
+    transition: stroke 0.2s ease;
+  }
+
+  .figma-cursor-dot {
+    fill: var(--accent-secondary);
+    stroke: #07080a;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+  }
+
+  /* Light Mode: Crisp Dark Neutral Body + White Outline + Indigo Accent Pivot Dot */
+  [data-theme="light"] .figma-cursor-fill {
+    fill: #0f172a;
+    stroke: #ffffff;
+  }
+
+  [data-theme="light"] .figma-hand-lines {
+    stroke: #ffffff;
+  }
+
+  [data-theme="light"] .figma-cursor-dot {
+    fill: var(--accent-primary);
+    stroke: #ffffff;
+  }
+
+  /* State 2: Hovering Over Selectable Text */
+  body.cursor-text-mode:not(.cursor-hover) .cursor-arrow {
+    display: none;
+  }
+
+  body.cursor-text-mode:not(.cursor-hover) .cursor-text {
+    display: block;
+  }
+
+  /* State 3: Hovering Over Buttons, Links & Clickable Cards */
+  body.cursor-hover .cursor-arrow,
+  body.cursor-hover .cursor-text {
+    display: none;
+  }
+
+  body.cursor-hover .cursor-hand {
+    display: block;
+  }
+
+  /* Tactile Press Effect on Mouse Click */
+  body.cursor-pressed .cursor-svg {
+    transform: scale(0.86) translateY(2px);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .figma-cursor {
+    display: none !important;
+  }
 }
 
 @media (max-width: 60rem) {

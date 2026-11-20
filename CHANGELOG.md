@@ -1,18 +1,19 @@
 # Release Changelog — Gagan M R Portfolio
 
 **Release Date:** November 20, 2026  
-**Version:** v1.8  
+**Version:** v1.4  
 
 ---
 
 ## Summary of Changes
 
-Release **v1.8** fixes the mobile side navigation drawer stacking context so the drawer opens sharply above the backdrop blur overlay instead of appearing blurred underneath it.
+Release **v1.4** redesigns the custom cursor suite using high-contrast UI/UX ergonomics: a faceted geometric pointer arrow with a signature accent pivot dot, a matching clean pointing hand, and a hollow outlined I-beam text selection cursor that remain clearly visible across every button and surface in both Dark and Light modes.
 
 ---
 
 ## Detailed Breakdown
 
-### 1. Fixed Mobile Side Drawer Z-Index Stacking Context (`index.html`, `css/layout.css`)
-- **Moved Mobile Drawer Outside Sticky Header:** Relocated `<nav class="nav-drawer" id="navMenu">` to sit at the top level of `<body>` alongside `#navOverlay`. Previously, `.navbar`'s `backdrop-filter: blur(18px)` and `z-index: 100` trapped `.nav-drawer` underneath `#navOverlay` (`z-index: 190`), causing the entire open drawer to appear blurred and unclickable.
-- **Desktop & Mobile Parity:** Kept `.desktop-nav` cleanly inside `.navbar` for desktop viewports (`> 768px`) while `.nav-drawer` (`z-index: 200`) slides in crisply over `.nav-overlay` (`z-index: 190`) on mobile screens.
+### 1. Ergonomic Geometric Cursor Suite (`index.html`, `css/components.css`)
+- **High-Contrast Figure-Ground Separation:** Replaced solid indigo cursor fills (which blended into indigo buttons) with crisp neutral fills (`#f8fafc` on dark backgrounds, `#0f172a` on light backgrounds) paired with opposing `1.1px` borders.
+- **Signature Accent Pivot Dot:** Added the geometric notch accent dot (`--accent-secondary` in Dark Mode, `--accent-primary` in Light Mode) to the pointer arrow and pointing hand so the cursor ties into the site's visual identity without sacrificing contrast.
+- **Matching Outlined Text I-Beam:** Styled `#figmaCursorText` as a crisp hollow geometric I-beam matching the arrow and hand stroke weight.

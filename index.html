@@ -62,7 +62,7 @@
     </div>
   </header>
 
-  <!-- Top-Level Mobile Backdrop & Side Drawer (Outside Header Stacking Context) -->
+  <!-- Top-Level Mobile Backdrop & Side Drawer -->
   <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
   <aside class="nav-drawer" id="navMenu" aria-label="Mobile Navigation">
@@ -116,7 +116,7 @@
         </div>
       </div>
 
-      <!-- Quick Value Metrics (Single-Line Aligned Headings) -->
+      <!-- Equally Spaced Quick Value Metrics -->
       <div class="metrics-strip">
         <div class="metric-item">
           <h3>Web &amp; App</h3>
@@ -487,6 +487,44 @@
         <div id="modalActionWrap" style="margin-top: 1.75rem;"></div>
       </div>
     </div>
+  </div>
+
+  <!-- High-Contrast Geometric Cursor Suite (Faceted Arrow + Pivot Dot, Hand & Hollow I-Beam) -->
+  <div class="figma-cursor" id="figmaCursor" aria-hidden="true">
+    <!-- 1. Geometric Pointer Arrow with Signature Theme Pivot Dot -->
+    <svg id="figmaCursorArrow" class="cursor-svg cursor-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M5 3.5L17.5 13.5L11.5 14.8L7.2 19.2L5 17V3.5Z"
+            class="figma-cursor-fill"
+            stroke-width="1.15"
+            stroke-linejoin="round" />
+      <circle cx="11.2" cy="17.2" r="2.75"
+              class="figma-cursor-dot"
+              stroke-width="1.1" />
+    </svg>
+
+    <!-- 2. High-Contrast Geometric Pointing Hand with Accent Cuff Dot -->
+    <svg id="figmaCursorHand" class="cursor-svg cursor-hand" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M10.2 3a1.4 1.4 0 0 1 1.4 1.4v5.7c.34-.22.74-.35 1.18-.35.84 0 1.56.5 1.88 1.22.32-.2.7-.32 1.12-.32.89 0 1.65.55 1.94 1.34.26-.11.55-.17.85-.17 1.18 0 2.13.95 2.13 2.13v2.5c0 2.9-2.35 5.25-5.25 5.25h-3.4c-1.96 0-3.78-1.03-4.79-2.72L5 15.2a1.32 1.32 0 0 1 1.89-1.77l1.91 1.34V4.4A1.4 1.4 0 0 1 10.2 3Z"
+            class="figma-cursor-fill"
+            stroke-width="1.15"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+      <path d="M11.6 10.1v2.5M14.66 10.85v2M17.72 12v1.35"
+            class="figma-hand-lines"
+            stroke-width="1.05"
+            stroke-linecap="round" />
+      <circle cx="13.5" cy="17.8" r="1.85"
+              class="figma-cursor-dot"
+              stroke-width="0.95" />
+    </svg>
+
+    <!-- 3. Hollow Geometric Text Selection I-Beam -->
+    <svg id="figmaCursorText" class="cursor-svg cursor-text" width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M8.5 4h7v2.2H13.1v11.6h2.4V20h-7v-2.2h2.4V6.2H8.5V4Z"
+            class="figma-cursor-fill"
+            stroke-width="1.1"
+            stroke-linejoin="round" />
+    </svg>
   </div>
 
   <!-- Modular Scripts -->
