@@ -6,12 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Dark / Light Theme Switcher (Persists in localStorage)
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = document.getElementById("themeIcon");
+  const themeIconSun = document.getElementById("themeIconSun");
+  const themeIconMoon = document.getElementById("themeIconMoon");
 
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     localStorage.setItem("portfolio-theme", theme);
-    themeIcon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    if (themeIconSun && themeIconMoon) {
+      themeIconSun.style.display = theme === "dark" ? "inline-block" : "none";
+      themeIconMoon.style.display = theme === "light" ? "inline-block" : "none";
+    }
   }
 
   const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
@@ -30,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const placeholder = document.createElement("div");
       placeholder.className = "asset-placeholder";
       placeholder.innerHTML = isLogo
-        ? `<i class="fa-solid fa-layer-group"></i>`
-        : `<i class="fa-regular fa-image"></i><span>Add image at:<br><strong>${expectedPath}</strong></span>`;
+        ? `<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>`
+        : `<svg class="ui-icon-lg accent-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add image at:<br><strong>${expectedPath}</strong></span>`;
       imgEl.replaceWith(placeholder);
     }, { once: true });
   }
@@ -46,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", () => navMenu.classList.remove("active"));
   });
 
-  // 5. Render Rich UI/UX Project Cards
+  // 5. Render 6-Card Portfolio Grid
   const portfolioGrid = document.getElementById("portfolioGrid");
 
   function renderProjects(filter = "all") {
@@ -73,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="project-footer">
               <span class="project-tags">${project.tags}</span>
               <button class="project-link open-modal" data-id="${project.id}">
-                Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Case Study
+                <svg class="ui-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
               </button>
             </div>
           </div>
@@ -97,9 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 7. Structured Case Study Modal
+  // 7. Structured Case Study & Video Modal
   const modal = document.getElementById("previewModal");
   const modalImg = document.getElementById("modalImg");
+  const modalVideo = document.getElementById("modalVideo");
   const modalCategory = document.getElementById("modalCategory");
   const modalRole = document.getElementById("modalRole");
   const modalTitle = document.getElementById("modalTitle");
@@ -111,6 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalActionWrap = document.getElementById("modalActionWrap");
   const closeModal = document.getElementById("closeModal");
 
+  function closeCaseStudyModal() {
+    modal.classList.remove("open");
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+  }
+
   portfolioGrid.addEventListener("click", (e) => {
     const card = e.target.closest(".project-card");
     if (!card) return;
@@ -118,12 +130,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const project = PROJECTS_DATA.find((p) => p.id === card.dataset.id);
     if (!project) return;
 
-    const thumbImg = card.querySelector("img");
-    if (thumbImg) {
-      modalImg.style.display = "block";
-      modalImg.src = thumbImg.src;
-    } else {
+    if (project.videoUrl) {
       modalImg.style.display = "none";
+      modalVideo.style.display = "block";
+      modalVideo.src = project.videoUrl;
+    } else {
+      modalVideo.style.display = "none";
+      modalVideo.pause();
+      const thumbImg = card.querySelector("img");
+      if (thumbImg) {
+        modalImg.style.display = "block";
+        modalImg.src = thumbImg.src;
+      } else {
+        modalImg.style.display = "none";
+      }
     }
 
     modalCategory.textContent = project.badge;
@@ -136,19 +156,19 @@ document.addEventListener("DOMContentLoaded", () => {
     modalOutcome.textContent = project.outcome;
 
     modalActionWrap.innerHTML = project.figmaUrl
-      ? `<a href="${project.figmaUrl}" target="_blank" rel="noopener" class="btn btn-primary">
-           <i class="fa-brands fa-figma"></i> Open Interactive Figma Prototype
+      ? `<a href="${project.figmaUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+           Open Interactive Prototype
          </a>`
       : "";
 
     modal.classList.add("open");
   });
 
-  closeModal.addEventListener("click", () => modal.classList.remove("open"));
+  closeModal.addEventListener("click", closeCaseStudyModal);
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.remove("open");
+    if (e.target === modal) closeCaseStudyModal();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") modal.classList.remove("open");
+    if (e.key === "Escape") closeCaseStudyModal();
   });
 });

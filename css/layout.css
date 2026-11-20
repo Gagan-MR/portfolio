@@ -70,7 +70,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -212,7 +211,7 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -245,6 +244,9 @@
 
 /* Responsive Breakpoints */
 @media (max-width: 64rem) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .process-grid,
   .metrics-strip {
     grid-template-columns: repeat(2, 1fr);
