@@ -14,7 +14,7 @@ A fast-loading, responsive, mobile-first portfolio showcasing multi-platform UI/
 - **Dark-First Theme System:** Defaults cleanly to Dark Mode (`data-theme="dark"`) with an instant Sun/Moon switcher persisted via `localStorage`.
 - **100% WebP Asset Pipeline:** All brand marks, hero visuals, and project thumbnails use next-gen `.webp` files for fast mobile and desktop page loads.
 - **Crisp Theme-Matched Mobile Side Drawer & Back-to-Top Button:** Slide-in mobile navigation drawer rendered above the backdrop blur overlay (`z-index: 950` over `z-index: 900`) and a floating scroll-to-top button styled for both Dark and Light themes.
-- **Direct Phone & WhatsApp Contact Channels:** One-tap `tel:+919113870006` direct phone call row alongside WhatsApp (`+91 91138 70006`) and email triggers.
+- **Direct Phone & WhatsApp Contact Channels:** One-tap direct phone call row alongside WhatsApp and email triggers.
 - **6-Card Balanced Portfolio Grid:** Showcases 6 core case studies filterable across **UI/UX & Systems**, **Brand & Logos**, **Icons & Graphics**, and **Motion & Video**.
 
 ---
