@@ -1,6 +1,6 @@
 /**
- * MULTIDISCIPLINARY PORTFOLIO DATA — 6 BALANCED CARDS (100% Local Assets)
- * Add images into: assets/images/projects/ (project-1.png to project-6.png)
+ * MULTIDISCIPLINARY PORTFOLIO DATA — 6 BALANCED CARDS (100% WebP Local Assets)
+ * Add WebP images into: assets/images/projects/ (project-1.webp to project-6.webp)
  * Optional: Add local .mp4 videos into: assets/videos/ and set videoUrl below.
  */
 const PROJECTS_DATA = [
@@ -22,7 +22,7 @@ const PROJECTS_DATA = [
       "Tokenized color, spacing & component handoff specs"
     ],
     outcome: "Delivered a cohesive cross-platform interface system ready for multi-device engineering implementation.",
-    image: "assets/images/projects/project-1.png",
+    image: "assets/images/projects/project-1.webp",
     videoUrl: "",
     figmaUrl: ""
   },
@@ -44,7 +44,7 @@ const PROJECTS_DATA = [
       "Responsive error, empty & loading state documentation"
     ],
     outcome: "Streamlined cross-device user journeys and ensured 100% state coverage across mobile, tablet, and desktop.",
-    image: "assets/images/projects/project-2.png",
+    image: "assets/images/projects/project-2.webp",
     videoUrl: "",
     figmaUrl: ""
   },
@@ -66,7 +66,7 @@ const PROJECTS_DATA = [
       "Print-ready packaging dielines & shelf mockups"
     ],
     outcome: "Established memorable, consistent brand systems ready for both digital product launches and physical retail production.",
-    image: "assets/images/projects/project-3.png",
+    image: "assets/images/projects/project-3.webp",
     videoUrl: "",
     figmaUrl: ""
   },
@@ -88,7 +88,7 @@ const PROJECTS_DATA = [
       "Custom spot illustrations for onboarding & empty states"
     ],
     outcome: "Elevated interface clarity and visual cohesion across web dashboards, navigation bars, and mobile apps.",
-    image: "assets/images/projects/project-4.png",
+    image: "assets/images/projects/project-4.webp",
     videoUrl: "",
     figmaUrl: ""
   },
@@ -110,7 +110,7 @@ const PROJECTS_DATA = [
       "High-resolution large-format print & signage layouts"
     ],
     outcome: "Delivered sharp, print-accurate marketing assets that drove engagement across physical venues and social channels.",
-    image: "assets/images/projects/project-5.png",
+    image: "assets/images/projects/project-5.webp",
     videoUrl: "",
     figmaUrl: ""
   },
@@ -132,7 +132,7 @@ const PROJECTS_DATA = [
       "Color-graded 20–60s social & product promo edits"
     ],
     outcome: "Increased viewer retention and brought static brand identities and UI flows to life with polished motion.",
-    image: "assets/images/projects/project-6.png",
+    image: "assets/images/projects/project-6.webp",
     videoUrl: "",
     figmaUrl: ""
   }

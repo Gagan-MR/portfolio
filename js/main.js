@@ -42,15 +42,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("img[data-asset]").forEach(attachLocalFallback);
 
-  // 4. Mobile Navigation Toggle
+  // 4. Mobile Slide-In Side Drawer Navigation
   const mobileToggle = document.getElementById("mobileToggle");
   const navMenu = document.getElementById("navMenu");
-  mobileToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
-  document.querySelectorAll(".nav-menu a").forEach((link) => {
-    link.addEventListener("click", () => navMenu.classList.remove("active"));
+  const navOverlay = document.getElementById("navOverlay");
+  const closeDrawer = document.getElementById("closeDrawer");
+
+  function openMobileDrawer() {
+    navMenu.classList.add("active");
+    navOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMobileDrawer() {
+    navMenu.classList.remove("active");
+    navOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  mobileToggle.addEventListener("click", openMobileDrawer);
+  closeDrawer.addEventListener("click", closeMobileDrawer);
+  navOverlay.addEventListener("click", closeMobileDrawer);
+
+  document.querySelectorAll(".drawer-list a").forEach((link) => {
+    link.addEventListener("click", closeMobileDrawer);
   });
 
-  // 5. Render 6-Card Portfolio Grid
+  // 5. Floating Back-to-Top Button
+  const backToTopBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  }, { passive: true });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // 6. Render 6-Card Portfolio Grid
   const portfolioGrid = document.getElementById("portfolioGrid");
 
   function renderProjects(filter = "all") {
@@ -65,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="project-thumb">
             <span class="project-badge">${project.badge}</span>
             ${project.metricBadge ? `<span class="project-metric-pill">${project.metricBadge}</span>` : ""}
-            <img src="${project.image}" data-asset="${project.image}" alt="${project.title}" />
+            <img src="${project.image}" data-asset="${project.image}" alt="${project.title}" loading="lazy" />
           </div>
           <div class="project-body">
             <div class="project-role-line">${project.role}</div>
@@ -92,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderProjects();
 
-  // 6. Category Filter Handling
+  // 7. Category Filter Handling
   const filterPills = document.querySelectorAll(".filter-pill");
   filterPills.forEach((pill) => {
     pill.addEventListener("click", () => {
@@ -102,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 7. Structured Case Study & Video Modal
+  // 8. Structured Case Study & Video Modal
   const modal = document.getElementById("previewModal");
   const modalImg = document.getElementById("modalImg");
   const modalVideo = document.getElementById("modalVideo");
@@ -169,6 +201,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) closeCaseStudyModal();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeCaseStudyModal();
+    if (e.key === "Escape") {
+      closeCaseStudyModal();
+      closeMobileDrawer();
+    }
   });
 });

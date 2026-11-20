@@ -1,21 +1,18 @@
 # Release Changelog — Gagan M R Portfolio
 
 **Release Date:** November 20, 2026  
-**Version:** v1.5  
+**Version:** v1.8  
 
 ---
 
 ## Summary of Changes
 
-Release **v1.5** updates the UI/UX positioning across the portfolio to highlight multi-platform product design (**Web, Desktop, Tablet & Mobile**) and **Interactive Figma Prototyping** across all device viewports.
+Release **v1.8** fixes the mobile side navigation drawer stacking context so the drawer opens sharply above the backdrop blur overlay instead of appearing blurred underneath it.
 
 ---
 
 ## Detailed Breakdown
 
-### 1. Multi-Platform UI/UX & Interactive Figma Prototyping (`index.html`, `js/projects-data.js`)
-- **Hero & Metrics Strip:** Updated Hero summary and metrics strip to emphasize responsive interfaces across **Web, Desktop, Tablet & Mobile** along with clickable, multi-device **Figma Prototypes**.
-- **Capabilities & About Section:** Highlighted adaptive breakpoint engineering, Smart Animate transitions, gesture flows, and component-driven prototyping across all screen sizes.
-- **Updated UI/UX Case Studies (`js/projects-data.js`):**
-  1. *Multi-Platform Cloud IDE & Dashboard UI* (`Web • Desktop • Tablet • Mobile`)
-  2. *Cross-Platform Mobile, Tablet & Auth Flows* (`iOS • Android • Tablet • Web`)
+### 1. Fixed Mobile Side Drawer Z-Index Stacking Context (`index.html`, `css/layout.css`)
+- **Moved Mobile Drawer Outside Sticky Header:** Relocated `<nav class="nav-drawer" id="navMenu">` to sit at the top level of `<body>` alongside `#navOverlay`. Previously, `.navbar`'s `backdrop-filter: blur(18px)` and `z-index: 100` trapped `.nav-drawer` underneath `#navOverlay` (`z-index: 190`), causing the entire open drawer to appear blurred and unclickable.
+- **Desktop & Mobile Parity:** Kept `.desktop-nav` cleanly inside `.navbar` for desktop viewports (`> 768px`) while `.nav-drawer` (`z-index: 200`) slides in crisply over `.nav-overlay` (`z-index: 190`) on mobile screens.

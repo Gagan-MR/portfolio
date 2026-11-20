@@ -1,23 +1,23 @@
 ================================================================================
-RELEASE NOTES — GAGAN M R UI/UX & VISUAL DESIGN PORTFOLIO (v1.5)
+RELEASE NOTES — GAGAN M R UI/UX & VISUAL DESIGN PORTFOLIO (v1.8)
 Release Date: November 20, 2026
 ================================================================================
 
 OVERVIEW
 --------
-Release v1.5 updates the portfolio copy and UI/UX case studies to reflect
-end-to-end product design across Web, Desktop, Tablet, and Mobile platforms,
-with full interactive prototyping in Figma for every screen size.
+Release v1.8 resolves the mobile side drawer blur/overlap bug by separating
+the mobile slide-in drawer from the sticky navbar's backdrop-filter stacking
+context.
 
 DETAILED CHANGES
 ----------------
-1. MULTI-PLATFORM UI/UX & INTERACTIVE PROTOTYPING POSITIONING
-   - Files Affected: index.html, js/projects-data.js
-   - Details: Updated Hero, Metrics Strip, Deep Dive Architecture, Capabilities,
-     About, and UI/UX Case Studies to highlight responsive design across Web,
-     Desktop, Tablet, and Mobile plus interactive Figma prototypes.
+1. MOBILE SIDE DRAWER STACKING FIX
+   - Files Affected: index.html, css/layout.css
+   - Details: Moved #navMenu (.nav-drawer, z-index: 200) out of .navbar
+     (z-index: 100) so it renders sharply above #navOverlay (z-index: 190) with
+     full contrast and clickable links on mobile devices.
 
-2. REPOSITORY DOCUMENTATION (v1.5)
+2. REPOSITORY DOCUMENTATION (v1.8)
    - Files Updated: README.md, CHANGELOG.md, RELEASE_NOTES.txt
-   - Details: Synchronized all documentation files to version v1.5.
+   - Details: Synchronized all documentation files to version v1.8.
 ================================================================================
